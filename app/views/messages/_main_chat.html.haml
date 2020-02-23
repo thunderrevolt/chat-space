@@ -27,8 +27,8 @@
   .form
     %form.form__message
       .input-box
-        %input.input-box__text{:placeholder => "メッセージ入力", :type => "text", :value => ""}/
+        %input.input-box__text{placeholder: "メッセージ入力", type: "text", value: ""}/
         %label.input-box__image
           =icon('far', 'image', class:"input-box__image--icon")
-          %input.input-box__image--file{:type => "file", :value => ""}/ 
-      %input.form__message--submit{:type => "submit", :value => "Send"}/
+          %input.input-box__image--file{type: "file", value: ""}/ 
+      %input.form__message--submit{type: "submit", value: "Send"}/
