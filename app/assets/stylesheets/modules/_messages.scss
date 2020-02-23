@@ -10,7 +10,7 @@
     background-color: #253141;
     width: 300px;
     &__users--name {
-      background-color: #253141;;
+      background-color: #253141;
       height: 100px;
       display: flex;
       align-items: center;
@@ -53,9 +53,12 @@
         width: 260px;
         font-size: 15px;
         font-weight: bold;
-        color: $main-color;
         padding: 0 0 5px;
         margin: 0 auto;
+        .group-link {
+          text-decoration: none;
+          color: $main-color;
+        }
       }
       &--message{
         font-weight: bold;
