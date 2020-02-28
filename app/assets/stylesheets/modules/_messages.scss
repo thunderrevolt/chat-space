@@ -49,6 +49,7 @@
       background-color: #2f3e51;
       height: calc(100vh - 100px);
       padding: 20px 20px;
+      overflow: scroll;
       &--name{
         width: 260px;
         font-size: 15px;

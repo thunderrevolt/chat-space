@@ -12,7 +12,6 @@ $(function() {
     search_list.append(html);
   }
 
-
   function appendErrMsgToHTML(msg) {
     var html = `<div class="chat-group-user clearfix">
     <p class="chat-group-user__name">${ msg }</p>
@@ -39,35 +38,34 @@ $(function() {
       data: { keyword: input },
       dataType: "json"
     })
-      .done(function(users) {
-        $("#user-search-result").empty();
-        if (users.length !== 0) {
-          users.forEach(function(users){
-            appendUser(users);
-          })
-        } else if (input.length == 0) {
-          return false;
-        } else {
-          appendErrMsgToHTML("一致するユーザーがありません");
-        }
-      })
-      .fail(function() {
-        alert("ユーザー検索に失敗しました");
-      })
-    });
-    $(document).on("click", ".chat-group-user__btn--add", function() {
-      console.log
-      const userName = $(this).attr("data-user-name");
-      const userId = $(this).attr("data-user-id");
-      $(this)
-        .parent()
-        .remove();
-      addDeleteUser(userName, userId);
-      addMember(userId);
-    });
-    $(document).on("click", ".chat-group-user__btn--remove", function() {
-      $(this)
-        .parent()
-        .remove();
-    });
+    .done(function(users) {
+      $("#user-search-result").empty();
+      if (users.length !== 0) {
+        users.forEach(function(users){
+          appendUser(users);
+        })
+      } else if (input.length == 0) {
+        return false;
+      } else {
+        appendErrMsgToHTML("一致するユーザーがありません");
+      }
+    })
+    .fail(function() {
+      alert("ユーザー検索に失敗しました");
+    })
   });
+  $(document).on("click", ".chat-group-user__btn--add", function() {
+    const userName = $(this).attr("data-user-name");
+    const userId = $(this).attr("data-user-id");
+    $(this)
+      .parent()
+      .remove();
+    addDeleteUser(userName, userId);
+    addMember(userId);
+  });
+  $(document).on("click", ".chat-group-user__btn--remove", function() {
+    $(this)
+      .parent()
+      .remove();
+  });
+});
