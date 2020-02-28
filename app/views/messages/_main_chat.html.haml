@@ -10,8 +10,7 @@
             =user.name
     = link_to 'Edit', edit_group_path(@group.id), class:"group__btn--edit"
   .messages
-    .message
-      = render @messages
+    = render @messages
  
   .form
     = form_for [@group, @message],html: { class: 'form__message'} do |f|
